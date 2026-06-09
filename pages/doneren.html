@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doneren – NieuweDuinen Roleplay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero { padding: 140px 40px 80px; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .page-hero .section-inner { max-width: 1100px; margin: 0 auto; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(42px, 6vw, 72px); color: var(--white); }
+    .donate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 48px; }
+    .donate-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .donate-card:hover { border-color: rgba(47,168,255,0.35); transform: translateY(-3px); }
+    .donate-card.featured { border-color: var(--accent); }
+    .featured-badge {
+      position: absolute;
+      top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--accent);
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 99px;
+    }
+    .donate-tier { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+    .donate-price { font-family: var(--font-display); font-size: 48px; color: var(--white); line-height: 1; }
+    .donate-price span { font-size: 18px; color: var(--muted); font-family: var(--font-body); }
+    .donate-card h3 { font-size: 20px; font-weight: 700; color: var(--white); }
+    .donate-perks { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .donate-perks li { font-size: 14px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .donate-perks li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .donate-perks li.disabled { color: var(--muted); }
+    .donate-perks li.disabled::before { content: '—'; color: var(--muted); }
+    .info-box { background: rgba(47,168,255,0.07); border: 1px solid rgba(47,168,255,0.2); border-radius: 12px; padding: 20px 24px; margin-top: 48px; font-size: 14px; color: var(--muted); }
+    .info-box strong { color: var(--white); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <img src="../images/logo.png" alt="NieuweDuinen Roleplay" />
+    NieuweDuinen Roleplay
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="nieuws.html">Nieuws</a></li>
+    <li><a href="over-ons.html">Over ons</a></li>
+    <li><a href="apv.html">APV</a></li>
+    <li><a href="solliciteren.html">Solliciteren</a></li>
+    <li><a href="doneren.html">Doneren</a></li>
+  </ul>
+  <a href="https://discord.gg/JOUW_DISCORD_CODE" class="nav-discord" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+    Discord
+  </a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-inner">
+    <div class="section-eyebrow">Steun de server</div>
+    <h1>Doneren</h1>
+  </div>
+</div>
+
+<section style="background: var(--bg);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Donatie pakketten</div>
+    <h2>Kies jouw pakket</h2>
+    <p style="color:var(--muted); margin-top:12px; max-width:560px;">
+      Met een donatie help je de server draaiende te houden en verdere ontwikkeling mogelijk te maken.
+      Als dank krijg je exclusieve voordelen in-game en op Discord.
+    </p>
+
+    <div class="donate-grid">
+
+      <div class="donate-card">
+        <div class="donate-tier">Starter</div>
+        <div class="donate-price">€5 <span>/ maand</span></div>
+        <h3>Bronzen Supporter</h3>
+        <ul class="donate-perks">
+          <li>Donateur-rol op Discord</li>
+          <li>Gekleurd nametag in-game</li>
+          <li>Toegang tot donateur-kanaal</li>
+          <li class="disabled">Exclusief voertuig</li>
+          <li class="disabled">Custom nummerbord</li>
+          <li class="disabled">Priority join</li>
+        </ul>
+        <a href="https://discord.gg/JOUW_DISCORD_CODE" class="btn-ghost" target="_blank" rel="noopener" style="text-align:center;">Doneer nu</a>
+      </div>
+
+      <div class="donate-card featured">
+        <div class="featured-badge">Meest gekozen</div>
+        <div class="donate-tier">Popular</div>
+        <div class="donate-price">€10 <span>/ maand</span></div>
+        <h3>Zilveren Supporter</h3>
+        <ul class="donate-perks">
+          <li>Donateur-rol op Discord</li>
+          <li>Gekleurd nametag in-game</li>
+          <li>Toegang tot donateur-kanaal</li>
+          <li>Exclusief voertuig in-game</li>
+          <li>Custom nummerbord</li>
+          <li class="disabled">Priority join</li>
+        </ul>
+        <a href="https://discord.gg/JOUW_DISCORD_CODE" class="btn-primary" target="_blank" rel="noopener" style="text-align:center;">Doneer nu</a>
+      </div>
+
+      <div class="donate-card">
+        <div class="donate-tier">Premium</div>
+        <div class="donate-price">€20 <span>/ maand</span></div>
+        <h3>Gouden Supporter</h3>
+        <ul class="donate-perks">
+          <li>Donateur-rol op Discord</li>
+          <li>Gekleurd nametag in-game</li>
+          <li>Toegang tot donateur-kanaal</li>
+          <li>Exclusief voertuig in-game</li>
+          <li>Custom nummerbord</li>
+          <li>Priority join op de server</li>
+        </ul>
+        <a href="https://discord.gg/JOUW_DISCORD_CODE" class="btn-ghost" target="_blank" rel="noopener" style="text-align:center;">Doneer nu</a>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <strong>Let op:</strong> Donaties geven geen voordelen in roleplay-situaties. Alle pakketten zijn puur cosmetisch of comfortabel van aard. Wij hanteren een no-refund beleid na activatie van je pakket. Vragen? Open een ticket op Discord.
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted);">
+      <span>© 2026 NieuweDuinen Roleplay. All rights reserved.</span>
+      <div class="footer-bottom-badge">Whitelisted RP Community</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
